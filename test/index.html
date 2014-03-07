@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+	
+	<style type="text/css">
+	body {
+		margin: 100px 0 0;
+	}
+	.wrap {
+		margin: 0 auto;
+		width: 600px;
+	}
+	#container {
+		border: 1px solid #000;
+		height: 10em;
+		overflow-y: scroll;
+		padding: 0 4px;
+		width: 590px;
+	}
+	</style>
+	
+	</head>
+	<body>
+
+	<div class="wrap">
+
+	<div id="container">
+		<!-- Content will be inserted here ... -->
+	</div>
+
+	</div>
+
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="../jquery.sticky.js"></script>
+
+	<script type="text/javascript">
+	var text = [
+		"On the other hand,",
+		"we denounce with righteous indignation and dislike men",
+		"who are so beguiled and demoralized by the charms of pleasure of the moment,",
+		"so blinded by desire,",
+		"that they cannot foresee the pain and trouble that are bound to ensue;",
+		"and equal blame belongs to those who fail in their duty through weakness of will,",
+		"which is the same as saying through shrinking from toil and pain.",
+		"These cases are perfectly simple and easy to distinguish.",
+		"In a free hour,",
+		"when our power of choice is untrammelled",
+		"and when nothing prevents our being able to do what we like best,",
+		"every pleasure is to be welcomed and every pain avoided.",
+		"But in certain circumstances and owing to the claims of duty",
+		"or the obligations of business it will frequently occur that pleasures have",
+		"to be repudiated and annoyances accepted.",
+		"The wise man therefore always holds in these matters to this principle of selection:",
+		"he rejects pleasures to secure other greater pleasures,",
+		"or else he endures pains to avoid worse pains.",
+	];
+
+	$(function() {
+
+	// Enable the plugin on the `#container` element.
+	var box = $("#container").sticky();
+
+	function write(i) {
+		var insert = $("<div>").html(text[i]);
+		box.append(insert);
+
+		i++;
+		if (i == text.length) {
+			i = 0;
+		}
+		var t = 1000 / 10;
+		setTimeout(function() {
+			write(i);
+		}, t);
+	}
+
+	write(0);
+
+	});
+	</script>
+
+	</body>
+</html>
