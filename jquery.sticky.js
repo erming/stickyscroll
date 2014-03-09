@@ -1,35 +1,36 @@
 (function($) {
+	var append = $.fn.append;
+	$.fn.append = function() {
+		return append.apply(this, arguments).trigger("append");
+	};
 
-var append = $.fn.append;
-$.fn.append = function() {
-	return append.apply(this, arguments).trigger("append");
-};
-
-$.fn.sticky = function() {
-	var target = $(this);
-	var sticky = false;
-
-	target.on("scroll", function() {
-		sticky = target.isScrollAtBottom();
-	});
-	target.trigger("scroll");
-	target.on("append", function() {
-		if (sticky) {
-			target.scrollToBottom();
+	$.fn.sticky = function() {
+		var self = this;
+		if (self.size() > 1) {
+			return self.each(function() { $(this).sticky(); });
 		}
-	});
 
-	return this;
-};
+		var sticky = false;
+		self.on("scroll", function() {
+			sticky = self.isScrollAtBottom();
+		});
+		self.trigger("scroll");
+		self.on("append", function() {
+			if (sticky) {
+				self.scrollToBottom();
+			}
+		});
+		
+		return this;
+	};
 
-$.fn.scrollToBottom = function() {
-	this.scrollTop(this.prop("scrollHeight"));
-};
+	$.fn.scrollToBottom = function() {
+		this.scrollTop(this.prop("scrollHeight"));
+	};
 
-$.fn.isScrollAtBottom = function() {
-	if ((this.scrollTop() + this.outerHeight()) >= this.prop("scrollHeight")) {
-		return true;
-	}
-};
-
+	$.fn.isScrollAtBottom = function() {
+		if ((this.scrollTop() + this.outerHeight()) >= this.prop("scrollHeight")) {
+			return true;
+		}
+	};
 })(jQuery);
