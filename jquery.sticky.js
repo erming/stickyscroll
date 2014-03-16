@@ -46,11 +46,13 @@
 	};
 
 	$.fn.scrollToBottom = function() {
-		this.scrollTop(this.prop("scrollHeight"));
+		return this.each(function() {
+			this.scrollTop = this.scrollHeight;
+		});
 	};
 
 	$.fn.isScrollAtBottom = function() {
-		if ((this.scrollTop() + this.outerHeight()) >= this.prop("scrollHeight")) {
+		if ((this.scrollTop() + this.outerHeight() + 1) >= this.prop("scrollHeight")) {
 			return true;
 		}
 	};
