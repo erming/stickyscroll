@@ -23,7 +23,7 @@
 
 	<div class="wrap">
 
-	<div id="box-1"></div>
+	<div id="box-1" scroll-glue></div>
 	<div id="box-2"></div>
 
 	</div>
@@ -55,8 +55,7 @@
 
 	$(function() {
 
-	// Enable the plugin on the `#container` element.
-	var box_1 = $("#box-1").scrollGlue();
+	var box_1 = $("#box-1");
 	var box_2 = $("#box-2").scrollGlue();
 
 	function write(i) {

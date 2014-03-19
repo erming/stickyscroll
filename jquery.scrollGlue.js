@@ -7,6 +7,7 @@
  */
 
 (function($) {
+
 	var append = $.fn.append;
 	$.fn.append = function() {
 		return append.apply(this, arguments).trigger("append");
@@ -75,4 +76,9 @@
 			return true;
 		}
 	};
+
+	// Find elements with the 'scroll-glue' attribute and
+	// activate the plugin.
+	$("[scroll-glue]").scrollGlue();
+
 })(jQuery);
