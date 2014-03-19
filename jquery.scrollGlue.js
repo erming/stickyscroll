@@ -32,7 +32,7 @@
 		var self = this;
 		if (self.size() > 1) {
 			return self.each(function() {
-				$(this).sticky();
+				$(this).scrollGlue(options);
 			});
 		}
 
