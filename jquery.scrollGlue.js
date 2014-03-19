@@ -24,7 +24,11 @@
 		return result;
 	};
 
-	$.fn.scrollGlue = function() {
+	$.fn.scrollGlue = function(options) {
+		var settings = $.extend({
+			animate: 0
+		}, options);
+
 		var self = this;
 		if (self.size() > 1) {
 			return self.each(function() {
@@ -58,16 +62,16 @@
 		self.trigger("scroll");
 		self.on("append html", function() {
 			if (sticky) {
-				self.scrollToBottom();
+				self.scrollToBottom(settings.animate);
 			}
 		});
 
 		return this;
 	};
 
-	$.fn.scrollToBottom = function() {
+	$.fn.scrollToBottom = function(animate) {
 		return this.each(function() {
-			this.scrollTop = this.scrollHeight;
+			$(this).finish().animate({scrollTop: this.scrollHeight}, animate || 0);
 		});
 	};
 

@@ -56,7 +56,7 @@
 	$(function() {
 
 	var box_1 = $("#box-1");
-	var box_2 = $("#box-2").scrollGlue();
+	var box_2 = $("#box-2").scrollGlue({animate: 400});
 
 	function write(i) {
 		var insert = $("<div>").html(text[i]);
@@ -68,7 +68,7 @@
 		if (i == text.length) {
 			i = 0;
 		}
-		var t = 1000 / 4;
+		var t = 1000 / 2;
 		setTimeout(function() {
 			write(i);
 		}, t);
