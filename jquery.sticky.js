@@ -4,6 +4,17 @@
 		return append.apply(this, arguments).trigger("append");
 	};
 
+	var html = $.fn.html;
+	$.fn.html = function() {
+		var result = html.apply(this, arguments);
+		if (arguments.length) {
+			// Only trigger this event when something
+			// has been inserted.
+			this.trigger("html");
+		}
+		return result;
+	};
+
 	$.fn.sticky = function() {
 		var self = this;
 		if (self.size() > 1) {
@@ -36,7 +47,7 @@
 			}
 		});
 		self.trigger("scroll");
-		self.on("append", function() {
+		self.on("append html", function() {
 			if (sticky) {
 				self.scrollToBottom();
 			}

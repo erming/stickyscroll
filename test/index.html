@@ -10,9 +10,11 @@
 		margin: 0 auto;
 		width: 600px;
 	}
-	#container {
+	#box-1,
+	#box-2 {
 		border: 1px solid #000;
-		height: 10em;
+		height: 8em;
+		margin-top: 20px;
 		overflow-y: scroll;
 		padding: 0 4px;
 		width: 590px;
@@ -24,9 +26,8 @@
 
 	<div class="wrap">
 
-	<div id="container">
-		<!-- Content will be inserted here ... -->
-	</div>
+	<div id="box-1"></div>
+	<div id="box-2"></div>
 
 	</div>
 
@@ -58,17 +59,20 @@
 	$(function() {
 
 	// Enable the plugin on the `#container` element.
-	var box = $("#container").sticky();
+	var box_1 = $("#box-1").sticky();
+	var box_2 = $("#box-2").sticky();
 
 	function write(i) {
 		var insert = $("<div>").html(text[i]);
-		box.append(insert);
+
+		box_1.append(insert);
+		box_2.html(box_1.html());
 
 		i++;
 		if (i == text.length) {
 			i = 0;
 		}
-		var t = 1000 / 5;
+		var t = 1000 / 4;
 		setTimeout(function() {
 			write(i);
 		}, t);
