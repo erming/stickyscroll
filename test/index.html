@@ -29,7 +29,7 @@
 	</div>
 
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-	<script src="../jquery.sticky.js"></script>
+	<script src="../jquery.scrollGlue.js"></script>
 
 	<script type="text/javascript">
 	var text = [
@@ -56,8 +56,8 @@
 	$(function() {
 
 	// Enable the plugin on the `#container` element.
-	var box_1 = $("#box-1").sticky();
-	var box_2 = $("#box-2").sticky();
+	var box_1 = $("#box-1").scrollGlue();
+	var box_2 = $("#box-2").scrollGlue();
 
 	function write(i) {
 		var insert = $("<div>").html(text[i]);

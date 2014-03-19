@@ -1,3 +1,11 @@
+/*!
+ * jquery-scroll-glue
+ * https://github.com/erming/jquery-scroll-glue
+ *
+ * Copyright 2014 Mattias Erming <mattias@mattiaserming.com>
+ * MIT License
+ */
+
 (function($) {
 	var append = $.fn.append;
 	$.fn.append = function() {
@@ -15,7 +23,7 @@
 		return result;
 	};
 
-	$.fn.sticky = function() {
+	$.fn.scrollGlue = function() {
 		var self = this;
 		if (self.size() > 1) {
 			return self.each(function() {
