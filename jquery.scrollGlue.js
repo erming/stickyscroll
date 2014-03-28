@@ -20,14 +20,14 @@
 		if (arguments.length) {
 			// Only trigger this event when something
 			// has been inserted.
-			this.trigger("html");
+			this.trigger("append");
 		}
 		return result;
 	};
 
 	$.fn.scrollGlue = function(options) {
 		var settings = $.extend({
-			animate: 0
+			speed: 0
 		}, options);
 
 		var self = this;
@@ -61,18 +61,18 @@
 			}
 		});
 		self.trigger("scroll");
-		self.on("append html", function() {
+		self.on("append", function() {
 			if (sticky) {
-				self.scrollToBottom(settings.animate);
+				self.scrollToBottom(settings.speed);
 			}
 		});
 
 		return this;
 	};
 
-	$.fn.scrollToBottom = function(animate) {
+	$.fn.scrollToBottom = function(speed) {
 		return this.each(function() {
-			$(this).finish().animate({scrollTop: this.scrollHeight}, animate || 0);
+			$(this).finish().animate({scrollTop: this.scrollHeight}, speed || 0);
 		});
 	};
 
