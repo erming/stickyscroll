@@ -16,12 +16,13 @@
 	<div id="page">
 	
 	<div class="container-fluid">
-		<div class="row">
+		<div id="logo" class="row">
 			<div class="col-sm-12">
-				<h1 class="page-header">jquery-scroll-glue <small>v0.1.1</small></h1>
+				<a class="download hidden-xs" href="#download">Download</a>
+				<h1 class="page-header">jquery-scroll-glue <small>v0.2.0</small></h1>
 			</div>
 		</div>
-		<div id="examples" class="row">
+		<div id="usage" class="row">
 			<div class="col-sm-6">
 				<div class="panel panel-default">
 					<div id="box-1" class="panel-body"></div>
@@ -43,13 +44,13 @@
 				<h2 class="page-header">Usage</h2>
 				<h3>Include scripts</h3>
 				<p>Start by including <a href="http://jquery.com">jQuery</a> and the plugin.</p>
-				<pre>
+<pre>
 &lt;script src="jquery.js"&gt;&lt;/script&gt;
 &lt;script src="jquery.scrollGlue.js"&gt;&lt;/script&gt;
 </pre>
 				<h3>Active the plugin</h3>
 				<p>Now to the easy part.. All you have to do is call <code>.scrollGlue()</code> on your elements.</p>
-				<pre>
+<pre>
 &lt;script&gt;
 	<span>// Put the function call inside the
 	// jQuery ready event:</span>
@@ -75,9 +76,11 @@
 		</div>
 		<div id="download" class="row">
 			<div class="col-sm-12">
-				<h1 class="page-header">Download</h1>
-				<a href="https://github.com/erming/jquery-scroll-glue" class="btn btn-lg btn-success btn-block">Download jquery.scrollGlue.js</a>
-				<p class="version">version 0.2.0</p>
+				<h1 class="page-header text-center">Download</h1>
+				<div class="text-center">
+					<a href="https://github.com/erming/jquery-scroll-glue" class="btn btn-lg btn-success">Download jquery.scrollGlue.js</a>
+					<p class="version">version 0.2.0</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -92,6 +95,11 @@
 		.split(" ");
 	
 	$(function() {
+	
+	$("#logo .download").on("click", function(e) {
+		e.preventDefault();
+		$("body").scrollToBottom({speed: 500});
+	});
 	
 	var box_1 = $("#box-1");
 	var box_2 = $("#box-2").scrollGlue({speed: 500});
