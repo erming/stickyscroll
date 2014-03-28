@@ -81,10 +81,4 @@
 			return true;
 		}
 	};
-
-	$(function() {
-		// Find elements with the 'scroll-glue' attribute and
-		// activate the plugin.
-		$("[scroll-glue]").scrollGlue();
-	});
 })(jQuery);
