@@ -1,38 +1,52 @@
 body {
-	margin: 60px 0;
+	margin: 40px 0;
 }
-.page-header {
-	margin-top: 0;
+pre {
+	overflow-x: auto;
+	word-wrap: normal;
 }
-#page {
-	margin: 0 auto;
+.container-fluid {
 	max-width: 620px;
 }
-#page .col-sm-6,
-#page .col-sm-12 {
-	margin-bottom: 20px;
-}
-#logo .download {
-	float: right;
-	margin-top: 14px;
-}
-#usage span {
-	color: #999;
-}
-#usage .panel-body {
+.panel-body {
 	height: 121px;
 	overflow-y: scroll;
 	padding: 10px 15px;
 }
-#usage .panel-footer {
+.panel-footer {
 	color: #555;
 	text-align: center;
 }
-#download {
-	margin-top: 20px;
-}
-#download .version {
+#version {
 	color: #bbb;
 	margin-top: 10px;
 	text-align: center;
+}
+
+.com { color: #93a1a1; }
+.lit { color: #195f91; }
+.pun, .opn, .clo { color: #93a1a1; }
+.fun { color: #dc322f; }
+.str, .atv { color: #D14; }
+.kwd, .prettyprint .tag { color: #1e347b; }
+.typ, .atn, .dec, .var { color: teal; }
+.pln { color: #48484c; }
+.prettyprint {
+	padding: 9.5px;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+}
+.prettyprint.linenums {
+	-webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+	   -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+		box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+}
+ol.linenums {
+	margin: 0 0 0 33px;
+}
+ol.linenums li {
+	padding-left: 12px;
+	color: #bebec5;
+	line-height: 20px;
+	text-shadow: 0 1px 0 #fff;
 }

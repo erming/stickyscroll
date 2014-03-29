@@ -3,7 +3,7 @@
 	<head>
 	
 	<title>jquery-scroll-glue</title>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -13,16 +13,13 @@
 	</head>
 	<body>
 	
-	<div id="page">
-	
 	<div class="container-fluid">
-		<div id="logo" class="row">
+		<div class="row">
 			<div class="col-sm-12">
-				<a class="download hidden-xs" href="#download">Download</a>
-				<h1 class="page-header">jquery-scroll-glue <small>v0.2.0</small></h1>
+				<h1 class="page-header text-center">jquery-scroll-glue <small>v0.2.0</small></h1>
 			</div>
 		</div>
-		<div id="usage" class="row">
+		<div class="row">
 			<div class="col-sm-6">
 				<div class="panel panel-default">
 					<div id="box-1" class="panel-body"></div>
@@ -40,53 +37,46 @@
 				</div>
 				
 			</div>
+		</div>
+		<div class="row">
 			<div class="col-sm-12">
-				<h2 class="page-header">Usage</h2>
+				<h2 class="page-header text-center">Getting started</h2>
 				<h3>Include scripts</h3>
-				<p>Start by including <a href="http://jquery.com">jQuery</a> and the plugin.</p>
-<pre>
-&lt;script src="jquery.js"&gt;&lt;/script&gt;
-&lt;script src="jquery.scrollGlue.js"&gt;&lt;/script&gt;
-</pre>
-				<h3>Active the plugin</h3>
+				<p>Start by including <a href="http://jquery.com" target="_blank">jQuery</a> and the plugin.</p>
+
+				<pre class="prettyprint">
+				&lt;script src="jquery.js"&gt;&lt;/script&gt;
+				&lt;script src="jquery.scrollGlue.js"&gt;&lt;/script&gt;
+				</pre>
+
+				<h3>Activate the plugin</h3>
 				<p>Now to the easy part.. All you have to do is call <code>.scrollGlue()</code> on your elements.</p>
-<pre>
-&lt;script&gt;
-	<span>// Put the function call inside the
-	// jQuery ready event:</span>
-	$(function() {
-		$('.container').scrollGlue({
-			speed: 0 <span>// The scroll animation speed</span>
-		});
-	});
-&lt;/script&gt;
 
-&lt;style type="text/css"&gt;
-.container {
-	<span>// This is just an example use case</span>
-	overflow-y: scroll;
-}
-&lt;/style&gt;
+				<pre class="prettyprint">
+				&lt;script&gt;
+					// jQuery ready event
+					$(function() {
+						$('.target').scrollGlue({
+							speed: 0 // The scroll animation speed
+						});
+					});
+				&lt;/script&gt;
+				</pre>
 
-&lt;div class="container"&gt;
-	<span>// A scrollable container</span>
-&lt;/div&gt;
-</pre>
 			</div>
 		</div>
-		<div id="download" class="row">
+		<div class="row">
 			<div class="col-sm-12">
 				<h1 class="page-header text-center">Download</h1>
 				<div class="text-center">
 					<a href="https://github.com/erming/jquery-scroll-glue" class="btn btn-lg btn-success">Download jquery.scrollGlue.js</a>
-					<p class="version">version 0.2.0</p>
+					<p id="version">version 0.2.0</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	</div>
 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
 	<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
 	<script src="jquery.scrollGlue.js"></script>
 	<script>
@@ -95,35 +85,36 @@
 		.split(" ");
 	
 	$(function() {
+		// Strip tabs from <pre> elements
+		$("pre").each(function() {
+			$(this).html($(this).html().replace(/\t{4}/g, ""));
+		});
+		
+		prettyPrint();
+		
+		var box_1 = $("#box-1");
+		var box_2 = $("#box-2").scrollGlue({speed: 500});
+		
+		var num = 1;
+		function write(i) {
+			var insert = $("<div>").html(num++ + ". " + text[i])[0].outerHTML;
+			box_1.append(insert);
+			box_2.append(insert);
 	
-	$("#logo .download").on("click", function(e) {
-		e.preventDefault();
-		$("body").scrollToBottom({speed: 500});
-	});
-	
-	var box_1 = $("#box-1");
-	var box_2 = $("#box-2").scrollGlue({speed: 500});
-	
-	var num = 1;
-	function write(i) {
-		var insert = $("<div>").html(num++ + ". " + text[i])[0].outerHTML;
-		box_1.append(insert);
-		box_2.append(insert);
-
-		i++;
-		if (i == text.length) {
-			i = 0;
+			i++;
+			if (i == text.length) {
+				i = 0;
+			}
+			var t = 1000;
+			setTimeout(function() {
+				write(i);
+			}, t);
 		}
-		var t = 1000;
-		setTimeout(function() {
-			write(i);
-		}, t);
-	}
-
-	write(0);
 	
+		write(0);
 	});
 	</script>
+	
 	
 	</body>
 </html>
