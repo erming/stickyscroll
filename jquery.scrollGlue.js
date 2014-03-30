@@ -15,11 +15,10 @@
 	};
 
 	var html = $.fn.html;
-	$.fn.html = function() {
+	$.fn.html = function(string) {
 		var result = html.apply(this, arguments);
-		if (arguments.length) {
-			// Only trigger this event when something
-			// has been inserted.
+		if (typeof string !== "undefined") {
+			// Only trigger this event when the content has changed.
 			this.trigger("append");
 		}
 		return result;
@@ -37,28 +36,13 @@
 			});
 		}
 
-		var timer;
-		var resizing = false;
 		$(window).on("resize", function() {
-			// This will prevent the scroll event from triggering
-			// while resizing the window.
-			resizing = true;
-
-			clearTimeout(timer);
-			timer = setTimeout(function() {
-				resizing = false;
-			}, 100);
-
-			if (sticky) {
-				self.scrollToBottom();
-			}
+			self.finish();
 		});
 
 		var sticky = false;
 		self.on("scroll", function() {
-			if (!resizing) {
-				sticky = self.isScrollAtBottom();
-			}
+			sticky = self.isScrollAtBottom();
 		});
 		self.trigger("scroll");
 		self.on("append", function() {
