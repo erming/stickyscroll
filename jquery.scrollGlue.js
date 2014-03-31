@@ -9,21 +9,6 @@
  */
 
 (function($) {
-	var append = $.fn.append;
-	$.fn.append = function() {
-		return append.apply(this, arguments).trigger("append");
-	};
-
-	var html = $.fn.html;
-	$.fn.html = function(string) {
-		var result = html.apply(this, arguments);
-		if (typeof string !== "undefined") {
-			// Only trigger this event when the content has changed.
-			this.trigger("append");
-		}
-		return result;
-	};
-
 	$.fn.scrollGlue = function(options) {
 		var settings = $.extend({
 			speed: 0
@@ -36,16 +21,16 @@
 			});
 		}
 
-		$(window).on("resize", function() {
+		$(window).on('resize', function() {
 			self.finish();
 		});
 
 		var sticky = false;
-		self.on("scroll", function() {
+		self.on('scroll', function() {
 			sticky = self.isScrollAtBottom();
 		});
-		self.trigger("scroll");
-		self.on("append", function() {
+		self.trigger('scroll');
+		self.on('append', function() {
 			if (sticky) {
 				self.scrollToBottom(settings.speed);
 			}
@@ -54,6 +39,20 @@
 		return this;
 	};
 
+	var append = $.fn.append;
+	$.fn.append = function() {
+		return append.apply(this, arguments).trigger('append');
+	};
+
+	var html = $.fn.html;
+	$.fn.html = function(string) {
+		var result = html.apply(this, arguments);
+		if (typeof string !== 'undefined') {
+			this.trigger('append');
+		}
+		return result;
+	};
+	
 	$.fn.scrollToBottom = function(speed) {
 		return this.each(function() {
 			$(this).finish().animate({scrollTop: this.scrollHeight}, speed || 0);
@@ -61,7 +60,7 @@
 	};
 
 	$.fn.isScrollAtBottom = function() {
-		if ((this.scrollTop() + this.outerHeight() + 1) >= this.prop("scrollHeight")) {
+		if ((this.scrollTop() + this.outerHeight() + 1) >= this.prop('scrollHeight')) {
 			return true;
 		}
 	};

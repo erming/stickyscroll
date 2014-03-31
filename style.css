@@ -5,9 +5,6 @@ pre {
 	overflow-x: auto;
 	word-wrap: normal;
 }
-.container-fluid {
-	max-width: 620px;
-}
 .panel-body {
 	height: 121px;
 	overflow-y: scroll;
@@ -16,6 +13,9 @@ pre {
 .panel-footer {
 	color: #555;
 	text-align: center;
+}
+#content {
+	max-width: 620px;
 }
 #version {
 	color: #bbb;
