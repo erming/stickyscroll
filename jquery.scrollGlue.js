@@ -39,9 +39,16 @@
 		return this;
 	};
 
+	// Events
+	
 	var append = $.fn.append;
 	$.fn.append = function() {
 		return append.apply(this, arguments).trigger('append');
+	};
+	
+	var prepend = $.fn.prepend;
+	$.fn.prepend = function() {
+		return prepend.apply(this, arguments).trigger('append');
 	};
 
 	var html = $.fn.html;
@@ -52,6 +59,8 @@
 		}
 		return result;
 	};
+	
+	// Helpers
 	
 	$.fn.scrollToBottom = function(speed) {
 		return this.each(function() {
