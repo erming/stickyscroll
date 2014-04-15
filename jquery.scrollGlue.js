@@ -1,6 +1,6 @@
 /*!
- * jquery-scroll-glue
- * https://github.com/erming/jquery-scroll-glue
+ * scrollGlue
+ * https://github.com/erming/scrollGlue
  *
  * Copyright (c) 2014 Mattias Erming <mattias@mattiaserming.com>
  * Licensed under the MIT License.
