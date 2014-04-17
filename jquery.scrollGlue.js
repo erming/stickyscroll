@@ -8,6 +8,10 @@
  * Version 0.2.1
  */
 
+if (typeof jQuery === 'undefined') {
+	throw new Error('scrollGlue requires jQuery')
+}
+
 (function($) {
 	$.fn.scrollGlue = function(options) {
 		var settings = $.extend({
@@ -39,8 +43,6 @@
 		return this;
 	};
 
-	// Events
-	
 	var append = $.fn.append;
 	$.fn.append = function() {
 		return append.apply(this, arguments).trigger('append');
@@ -59,8 +61,6 @@
 		}
 		return result;
 	};
-	
-	// Helpers
 	
 	$.fn.scrollToBottom = function(speed) {
 		return this.each(function() {
