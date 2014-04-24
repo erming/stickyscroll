@@ -7,15 +7,11 @@
  *
  * Version 0.2.1
  */
-
-if (typeof jQuery === 'undefined') {
-	throw new Error('scrollGlue requires jQuery')
-}
-
 (function($) {
 	$.fn.scrollGlue = function(options) {
 		var settings = $.extend({
-			speed: 0
+			speed: 0,
+			scrollToBottom: true,
 		}, options);
 
 		var self = this;
@@ -23,6 +19,10 @@ if (typeof jQuery === 'undefined') {
 			return self.each(function() {
 				$(this).scrollGlue(options);
 			});
+		}
+		
+		if (settings.scrollToBottom) {
+			self.scrollToBottom();
 		}
 
 		$(window).on('resize', function() {
@@ -43,14 +43,16 @@ if (typeof jQuery === 'undefined') {
 		return this;
 	};
 
-	var append = $.fn.append;
-	$.fn.append = function() {
-		return append.apply(this, arguments).trigger('append');
-	};
+	// Overrides
 	
 	var prepend = $.fn.prepend;
 	$.fn.prepend = function() {
 		return prepend.apply(this, arguments).trigger('append');
+	};
+	
+	var append = $.fn.append;
+	$.fn.append = function() {
+		return append.apply(this, arguments).trigger('append');
 	};
 
 	var html = $.fn.html;
@@ -61,6 +63,8 @@ if (typeof jQuery === 'undefined') {
 		}
 		return result;
 	};
+	
+	// Utils
 	
 	$.fn.scrollToBottom = function(speed) {
 		return this.each(function() {
