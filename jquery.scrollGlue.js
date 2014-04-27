@@ -10,8 +10,9 @@
 (function($) {
 	$.fn.scrollGlue = function(options) {
 		var settings = $.extend({
-			speed: 0,
+			overflow: "scroll",
 			scrollToBottom: true,
+			speed: 0
 		}, options);
 
 		var self = this;
@@ -21,6 +22,7 @@
 			});
 		}
 		
+		self.css("overflow-y", settings.overflow);
 		if (settings.scrollToBottom) {
 			self.scrollToBottom();
 		}

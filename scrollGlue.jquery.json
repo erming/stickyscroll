@@ -2,7 +2,7 @@
 	"name": "scrollGlue",
 	"version": "1.0.1",
 	"title": "scrollGlue",
-	"description": "The plugin that lets you lock the scrollbar to the bottom.",
+	"description": "A plugin that lets you lock scrollbars to the bottom.",
 	"keywords": [
 		"scroll",
 		"scrollbar",

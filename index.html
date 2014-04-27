@@ -106,7 +106,11 @@
 		prettyPrint();
 		
 		var box_1 = $("#box-1");
-		var box_2 = $("#box-2").scrollGlue({speed: 200});
+		var box_2 = $("#box-2").scrollGlue({
+			overflow: "scroll",
+			scrollToBottom: true,
+			speed: 0
+		});
 		
 		var num = 1;
 		function write(i) {
