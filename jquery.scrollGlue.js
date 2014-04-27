@@ -10,6 +10,7 @@
 (function($) {
 	$.fn.scrollGlue = function(options) {
 		var settings = $.extend({
+			disableManualScroll: false,
 			overflow: "scroll",
 			scrollToBottom: true,
 			speed: 0
@@ -31,9 +32,13 @@
 			self.finish();
 		});
 
-		var sticky = false;
+		var sticky = true;
 		self.on('scroll', function() {
-			sticky = self.isScrollAtBottom();
+			if (settings.disableManualScroll) {
+				self.scrollToBottom();
+			} else {
+				sticky = self.isScrollAtBottom();
+			}
 		});
 		self.trigger('scroll');
 		self.on('append', function() {
