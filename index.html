@@ -80,14 +80,18 @@
 					</a>
 					</div>
 					<p id="version">version 0.2.2</p>
-					<p id="author">Created by <a href="http://github.com/erming" target="_blank">Mattias Erming</a></p>
+					<p id="author">
+						Created by
+						<a href="http://github.com/erming" target="_blank">Mattias Erming</a>
+					</p>
 				</div>
 			</div>
 		</section>
 	</div>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-	<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+	<!--<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	<script src="jquery.scrollGlue.js"></script>
 	<script>
 	var text =
@@ -103,7 +107,7 @@
 		prettyPrint();
 		
 		var box_1 = $("#box-1");
-		var box_2 = $("#box-2").scrollGlue({speed: 500});
+		var box_2 = $("#box-2").scrollGlue({speed: 200});
 		
 		var num = 1;
 		function write(i) {
