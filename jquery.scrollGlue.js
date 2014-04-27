@@ -43,8 +43,6 @@
 		return this;
 	};
 
-	// Overrides
-	
 	var prepend = $.fn.prepend;
 	$.fn.prepend = function() {
 		return prepend.apply(this, arguments).trigger('append');
@@ -63,8 +61,6 @@
 		}
 		return result;
 	};
-	
-	// Utils
 	
 	$.fn.scrollToBottom = function(speed) {
 		return this.each(function() {
