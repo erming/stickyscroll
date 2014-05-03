@@ -1,0 +1,19 @@
+{
+  "name": "scrollGlue",
+  "version": "1.2.0",
+  "homepage": "https://github.com/erming/scrollGlue",
+  "authors": [
+    "Mattias Erming <mattias@mattiaserming.com>"
+  ],
+  "description": "A plugin that lets you lock scrollbars to the bottom.",
+  "main": "jquery.scrollGlue.js",
+  "keywords": [
+    "scroll",
+    "scrollbar",
+    "sticky"
+  ],
+  "license": "MIT",
+  "ignore": [
+		"*.jquery.json"
+  ]
+}
