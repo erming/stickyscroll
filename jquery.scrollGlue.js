@@ -5,7 +5,7 @@
  * Copyright (c) 2014 Mattias Erming <mattias@mattiaserming.com>
  * Licensed under the MIT License.
  *
- * Version 1.1.0
+ * Version 1.2.0
  */
 (function($) {
 	$.fn.scrollGlue = function(options) {
