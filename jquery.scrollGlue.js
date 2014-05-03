@@ -11,7 +11,7 @@
 	$.fn.scrollGlue = function(options) {
 		var settings = $.extend({
 			disableManualScroll: false,
-			overflow: "scroll",
+			overflow: 'scroll',
 			scrollToBottom: true,
 			speed: 0
 		}, options);
@@ -23,7 +23,7 @@
 			});
 		}
 		
-		self.css("overflow-y", settings.overflow);
+		self.css('overflow-y', settings.overflow);
 		if (settings.scrollToBottom) {
 			self.scrollToBottom();
 		}
@@ -74,25 +74,17 @@
 	$.fn.append = function() {
 		return append.apply(this, arguments).trigger('append');
 	};
-
-	var html = $.fn.html;
-	$.fn.html = function(string) {
-		var result = html.apply(this, arguments);
-		if (typeof string !== 'undefined') {
-			this.trigger('append');
-		}
-		return result;
-	};
 	
-	$.fn.scrollToBottom = function(speed) {
-		return this.each(function() {
-			$(this).finish().animate({scrollTop: this.scrollHeight}, speed || 0);
-		});
-	};
-
-	$.fn.isScrollAtBottom = function() {
-		if ((this.scrollTop() + this.outerHeight() + 1) >= this.prop('scrollHeight')) {
-			return true;
+	$.extend($.fn, {
+		scrollToBottom: function(speed) {
+			return this.each(function() {
+				$(this).finish().animate({scrollTop: this.scrollHeight}, speed || 0);
+			});
+		},
+		isScrollAtBottom: function() {
+			if ((this.scrollTop() + this.outerHeight() + 1) >= this.prop('scrollHeight')) {
+				return true;
+			}
 		}
-	};
+	});
 })(jQuery);
