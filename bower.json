@@ -12,8 +12,11 @@
     "scrollbar",
     "sticky"
   ],
+  "dependencies": {
+    "jquery": ">=1.9"
+  },
   "license": "MIT",
   "ignore": [
-		"*.jquery.json"
+    "*.jquery.json"
   ]
 }
