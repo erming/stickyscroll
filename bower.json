@@ -1,6 +1,6 @@
 {
   "name": "scrollGlue",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "https://github.com/erming/scrollGlue",
   "authors": [
     "Mattias Erming <mattias@mattiaserming.com>"
@@ -17,6 +17,9 @@
   },
   "license": "MIT",
   "ignore": [
-    "*.jquery.json"
+    "index.html",
+    "README.md",
+    "scrollGlue.jquery.json",
+    "style.css"
   ]
 }
