@@ -28,15 +28,30 @@
 			self.scrollToBottom();
 		}
 
+		var timer;
+		var resizing = false;
 		$(window).on('resize', function() {
 			self.finish();
+			
+			// This will prevent the scroll event from triggering
+			// while resizing the browser.
+			resizing = true;
+			
+			clearTimeout(timer);
+			timer = setTimeout(function() {
+				resizing = false;
+			}, 100);
+			
+			if (sticky) {
+				self.scrollToBottom();
+			}
 		});
 
 		var sticky = true;
 		self.on('scroll', function() {
 			if (settings.disableManualScroll) {
 				self.scrollToBottom();
-			} else {
+			} else if (!resizing) {
 				sticky = self.isScrollAtBottom();
 			}
 		});
