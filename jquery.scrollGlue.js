@@ -15,7 +15,7 @@
 			scrollToBottom: true,
 			speed: 0
 		}, options);
-
+		
 		var self = this;
 		if (self.size() > 1) {
 			return self.each(function() {
@@ -27,7 +27,7 @@
 		if (settings.scrollToBottom) {
 			self.scrollToBottom();
 		}
-
+		
 		var timer;
 		var resizing = false;
 		$(window).on('resize', function() {
@@ -46,7 +46,7 @@
 				self.scrollToBottom();
 			}
 		});
-
+		
 		var sticky = true;
 		self.on('scroll', function() {
 			if (settings.disableManualScroll) {
@@ -56,35 +56,34 @@
 			}
 		});
 		self.trigger('scroll');
-		self.on('append', function() {
+		self.on('prepend append', function() {
 			if (sticky) {
 				self.scrollToBottom(settings.speed);
 			}
 		});
-
+		
 		return this;
 	};
-
-	var prepend = $.fn.prepend;
-	$.fn.prepend = function() {
-		return prepend.apply(this, arguments).trigger('append');
-	};
 	
-	var append = $.fn.append;
-	$.fn.append = function() {
-		return append.apply(this, arguments).trigger('append');
-	};
-	
-	$.extend($.fn, {
-		scrollToBottom: function(speed) {
-			return this.each(function() {
-				$(this).finish().animate({scrollTop: this.scrollHeight}, speed || 0);
-			});
-		},
-		isScrollAtBottom: function() {
-			if ((this.scrollTop() + this.outerHeight() + 1) >= this.prop('scrollHeight')) {
-				return true;
-			}
-		}
+	// Normally, these functions won't trigger any events.
+	// Lets override them.
+	var events = ['prepend', 'append'];
+	$.each(events, function(i, e) {
+		var fn = $.fn[e];
+		$.fn[e] = function() {
+			return fn.apply(this, arguments).trigger(e);
+		};
 	});
+	
+	$.fn.isScrollAtBottom = function() {
+		if ((this.scrollTop() + this.outerHeight() + 1) >= this.prop('scrollHeight')) {
+			return true;
+		}
+	};
+	
+	$.fn.scrollToBottom = function(speed) {
+		return this.each(function() {
+			$(this).finish().animate({scrollTop: this.scrollHeight}, speed || 0);
+		});
+	};
 })(jQuery);
