@@ -8,7 +8,7 @@
  * Version 1.2.1
  */
 (function($) {
-	$.fn.stickyScroll = function(options) {
+	$.fn.sticky = function(options) {
 		var settings = $.extend({
 			disableManualScroll: false,
 			overflow: 'scroll',
@@ -19,7 +19,7 @@
 		var self = this;
 		if (self.size() > 1) {
 			return self.each(function() {
-				$(this).stickyScroll(options);
+				$(this).sticky(options);
 			});
 		}
 		
