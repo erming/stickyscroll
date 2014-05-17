@@ -1,15 +1,15 @@
 {
-	"name": "scrollGlue",
+	"name": "stickyScroll",
 	"version": "1.2.1",
-	"title": "scrollGlue",
+	"title": "stickyScroll",
 	"description": "A plugin that lets you lock scrollbars to the bottom.",
 	"keywords": [
 		"scroll",
 		"scrollbar",
 		"sticky"
 	],
-	"homepage": "https://github.com/erming/scrollGlue",
-	"demo": "https://erming.github.io/scrollGlue",
+	"homepage": "https://github.com/erming/stickyScroll",
+	"demo": "https://erming.github.io/stickyScroll",
 	"author": {
 		"name": "Mattias Erming",
 		"url": "http://github.com/erming"

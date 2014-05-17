@@ -2,7 +2,7 @@
 <html>
 	<head>
 	
-	<title>scrollGlue</title>
+	<title>stickyScroll</title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
 		<section id="title" class="row">
 			<div class="col-sm-12">
 				<h1 class="page-header text-center">
-					scrollGlue <small>v1.2.1</small>
+					stickyScroll <small>v1.2.1</small>
 				</h1>
 			</div>
 		</section>
@@ -34,7 +34,7 @@
 				<div class="panel panel-default">
 					<div id="box-2" class="panel-body"></div>
 					<div class="panel-footer">
-						.scrollGlue()
+						.stickyScroll()
 					</div>
 				</div>
 				
@@ -49,15 +49,15 @@
 				<p>Start by including <a href="http://jquery.com" target="_blank">jQuery</a> and the plugin.</p>
 				<pre class="prettyprint">
 				&lt;script src="jquery.js"&gt;&lt;/script&gt;
-				&lt;script src="jquery.scrollGlue.js"&gt;&lt;/script&gt;
+				&lt;script src="jquery.stickyScroll.js"&gt;&lt;/script&gt;
 				</pre>
 				<h3>Activate the plugin</h3>
-				<p>Now to the easy part.. All you have to do is call <code>.scrollGlue()</code> on your elements.</p>
+				<p>Now to the easy part.. All you have to do is call <code>.stickyScroll()</code> on your elements.</p>
 				<pre class="prettyprint">
 				&lt;script&gt;
 					// jQuery ready event
 					$(function() {
-						$('.target').scrollGlue({
+						$('.target').stickyScroll({
 							speed: 0 // The scroll animation speed
 						});
 					});
@@ -72,10 +72,10 @@
 				</h2>
 				<div class="text-center">
 					<div class="btns">
-					<a href="https://github.com/erming/scrollGlue/archive/1.2.1.zip" class="btn btn-lg btn-success">
-						Download scrollGlue
+					<a href="https://github.com/erming/stickyScroll/archive/1.2.1.zip" class="btn btn-lg btn-success">
+						Download stickyScroll
 					</a>
-					<a href="https://github.com/erming/scrollGlue" target="_blank" class="btn btn-lg btn-default">
+					<a href="https://github.com/erming/stickyScroll" target="_blank" class="btn btn-lg btn-default">
 						View on GitHub
 					</a>
 					</div>
@@ -91,7 +91,7 @@
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
 	<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
-	<script src="jquery.scrollGlue.js"></script>
+	<script src="jquery.stickyScroll.js"></script>
 	<script>
 	var text =
 	"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -106,7 +106,7 @@
 		prettyPrint();
 		
 		var box_1 = $("#box-1");
-		var box_2 = $("#box-2").scrollGlue({
+		var box_2 = $("#box-2").stickyScroll({
 			disableManualScroll: false,
 			overflow: "scroll",
 			scrollToBottom: true,

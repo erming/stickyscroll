@@ -1,12 +1,12 @@
 {
-  "name": "scrollGlue",
+  "name": "stickyScroll",
   "version": "1.2.1",
-  "homepage": "https://github.com/erming/scrollGlue",
+  "homepage": "https://github.com/erming/stickyScroll",
   "authors": [
     "Mattias Erming <mattias@mattiaserming.com>"
   ],
   "description": "A plugin that lets you lock scrollbars to the bottom.",
-  "main": "jquery.scrollGlue.js",
+  "main": "jquery.stickyScroll.js",
   "keywords": [
     "scroll",
     "scrollbar",
@@ -19,7 +19,7 @@
   "ignore": [
     "index.html",
     "README.md",
-    "scrollGlue.jquery.json",
+    "stickyScroll.jquery.json",
     "style.css"
   ]
 }

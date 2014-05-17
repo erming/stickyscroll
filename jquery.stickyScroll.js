@@ -1,6 +1,6 @@
 /*!
- * scrollGlue
- * https://github.com/erming/scrollGlue
+ * stickyScroll
+ * https://github.com/erming/stickyScroll
  *
  * Copyright (c) 2014 Mattias Erming <mattias@mattiaserming.com>
  * Licensed under the MIT License.
@@ -8,7 +8,7 @@
  * Version 1.2.1
  */
 (function($) {
-	$.fn.scrollGlue = function(options) {
+	$.fn.stickyScroll = function(options) {
 		var settings = $.extend({
 			disableManualScroll: false,
 			overflow: 'scroll',
@@ -19,7 +19,7 @@
 		var self = this;
 		if (self.size() > 1) {
 			return self.each(function() {
-				$(this).scrollGlue(options);
+				$(this).stickyScroll(options);
 			});
 		}
 		
