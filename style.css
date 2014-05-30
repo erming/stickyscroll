@@ -18,8 +18,10 @@ pre {
 #content {
 	max-width: 620px;
 }
-#box-1 {
+#box-1,
+#box-2 {
 	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 #download .btn {
 	margin: 0 5px;

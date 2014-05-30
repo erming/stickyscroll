@@ -11,7 +11,7 @@
 	$.fn.sticky = function(options) {
 		var settings = $.extend({
 			disableManualScroll: false,
-			overflow: 'scroll',
+			overflow: 'auto',
 			scrollToBottom: true,
 			speed: 0
 		}, options);
@@ -24,6 +24,7 @@
 		}
 		
 		self.css('overflow-y', settings.overflow);
+		self.css('-webkit-overflow-scrolling', 'touch');
 		if (settings.scrollToBottom) {
 			self.scrollToBottom();
 		}
