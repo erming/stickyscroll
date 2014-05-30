@@ -1,16 +1,17 @@
 {
-  "name": "stickyScroll",
+  "name": "stickyscroll",
   "version": "1.2.1",
-  "homepage": "https://github.com/erming/stickyScroll",
+  "homepage": "https://github.com/erming/stickyscroll",
   "authors": [
     "Mattias Erming <mattias@mattiaserming.com>"
   ],
-  "description": "A plugin that lets you lock scrollbars to the bottom.",
-  "main": "jquery.stickyScroll.js",
+  "description": "Make your scrollbars stick when scrolled to the bottom",
+  "main": "stickyscroll.js",
   "keywords": [
     "scroll",
     "scrollbar",
-    "sticky"
+    "sticky",
+    "bottom"
   ],
   "dependencies": {
     "jquery": ">=1.9"
@@ -19,7 +20,7 @@
   "ignore": [
     "index.html",
     "README.md",
-    "stickyScroll.jquery.json",
+    "stickyscroll.jquery.json",
     "style.css"
   ]
 }

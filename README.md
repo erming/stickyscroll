@@ -1,7 +1,7 @@
 ## Demo
 
 A GitHub-hosted demo can be found here:  
-[View project page](http://erming.github.io/stickyScroll/)
+[View project page](http://erming.github.io/stickyscroll/)
 
 ## License
 

@@ -1,6 +1,6 @@
 /*!
- * stickyScroll
- * https://github.com/erming/stickyScroll
+ * stickyscroll
+ * https://github.com/erming/stickyscroll
  *
  * Copyright (c) 2014 Mattias Erming <mattias@mattiaserming.com>
  * Licensed under the MIT License.

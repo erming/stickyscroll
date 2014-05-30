@@ -1,15 +1,16 @@
 {
-	"name": "stickyScroll",
+	"name": "stickyscroll",
 	"version": "1.2.1",
-	"title": "stickyScroll",
-	"description": "A plugin that lets you lock scrollbars to the bottom.",
+	"title": "stickyscroll",
+	"description": "Make your scrollbars stick when scrolled to the bottom",
 	"keywords": [
 		"scroll",
 		"scrollbar",
-		"sticky"
+		"sticky",
+		"bottom"
 	],
-	"homepage": "https://github.com/erming/stickyScroll",
-	"demo": "https://erming.github.io/stickyScroll",
+	"homepage": "https://github.com/erming/stickyscroll",
+	"demo": "https://erming.github.io/stickyscroll",
 	"author": {
 		"name": "Mattias Erming",
 		"url": "http://github.com/erming"
