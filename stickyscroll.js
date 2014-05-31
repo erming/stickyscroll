@@ -29,7 +29,7 @@
 			self.scrollToBottom();
 		}
 		
-		var timer;
+		var resizeTimer;
 		var resizing = false;
 		$(window).on('resize', function() {
 			self.finish();
@@ -38,8 +38,8 @@
 			// while resizing the browser.
 			resizing = true;
 			
-			clearTimeout(timer);
-			timer = setTimeout(function() {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function() {
 				resizing = false;
 			}, 100);
 			
@@ -48,12 +48,16 @@
 			}
 		});
 		
+		var scrollTimer;
 		var sticky = true;
 		self.on('scroll', function() {
 			if (settings.disableManualScroll) {
 				self.scrollToBottom();
 			} else if (!resizing) {
-				sticky = self.isScrollAtBottom();
+				clearTimeout(scrollTimer);
+				scrollTimer = setTimeout(function() {
+					sticky = self.isScrollAtBottom();
+				}, 50);
 			}
 		});
 		self.trigger('scroll');
