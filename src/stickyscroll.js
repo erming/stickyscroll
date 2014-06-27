@@ -1,11 +1,7 @@
 /*!
  * stickyscroll
  * https://github.com/erming/stickyscroll
- *
- * Copyright (c) 2014 Mattias Erming <mattias@mattiaserming.com>
- * Licensed under the MIT License.
- *
- * Version 1.3.1
+ * v1.3.1
  */
 (function($) {
 	$.fn.sticky = function(options) {

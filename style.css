@@ -1,64 +1,40 @@
-body {
-	margin: 10px 0 50px;
-}
-pre {
-	overflow-x: auto;
-	word-wrap: normal;
-	-moz-tab-size: 4;
-	     tab-size: 4;
-}
-.panel-body {
-	height: 121px;
-	padding: 10px 15px;
-}
-.panel-footer {
-	color: #555;
-	text-align: center;
-}
-#content {
-	max-width: 620px;
-}
-#box-1,
-#box-2 {
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-}
-#download .btn {
-	margin: 0 5px 10px;
-}
-#version {
-	color: #bbb;
-	margin-top: 10px;
-	text-align: center;
-}
-#author {
-	margin-top: 2em;
-}
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-.com { color: #93a1a1; }
-.lit { color: #195f91; }
-.pun, .opn, .clo { color: #93a1a1; }
-.fun { color: #dc322f; }
-.str, .atv { color: #D14; }
-.kwd, .prettyprint .tag { color: #1e347b; }
-.typ, .atn, .dec, .var { color: teal; }
-.pln { color: #48484c; }
-.prettyprint {
-	padding: 9.5px;
-	background-color: #f7f7f9;
-	border: 1px solid #e1e1e8;
+body {
+	font: 16px Lato, sans-serif;
+	margin: 100px 0;
 }
-.prettyprint.linenums {
-	-webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
-	   -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
-		box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+a {
+	color: inherit;
+	transition: all .2s;
 }
-ol.linenums {
-	margin: 0 0 0 33px;
+a:hover {
+	color: #00c165;
+	text-decoration: none;
 }
-ol.linenums li {
-	padding-left: 12px;
-	color: #bebec5;
-	line-height: 20px;
-	text-shadow: 0 1px 0 #fff;
+h1,
+h2 {
+	font: 300 54px Lato, sans-serif;
+	margin: 0 0 25px;
+	line-height: 1.5;
+}
+h1 {
+	color: #2c3e50;
+}
+h1 small {
+	color: #d0d5d7;
+	display: block;
+	font-size: 26px;
+	font-weight: 300;
+	margin-top: .6em;
+}
+h2 {
+	color: #7f8c8d;
+	font-size: 26px;
+}
+.container {
+	max-width: 460px;
+}
+#header {
+	text-align: center;
 }

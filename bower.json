@@ -6,21 +6,15 @@
     "Mattias Erming <mattias@mattiaserming.com>"
   ],
   "description": "Make your scrollbars stick when scrolled to the bottom",
-  "main": "stickyscroll.js",
+  "main": "./src/stickyscroll.js",
   "keywords": [
     "scroll",
     "scrollbar",
     "sticky",
     "bottom"
   ],
-  "dependencies": {
-    "jquery": ">=1.9"
-  },
   "license": "MIT",
-  "ignore": [
-    "index.html",
-    "README.md",
-    "stickyscroll.jquery.json",
-    "style.css"
-  ]
+	"ignore": [
+		"**/.*"
+	]
 }
