@@ -1,7 +1,7 @@
 /*!
  * stickyscroll
  * https://github.com/erming/stickyscroll
- * v1.3.1
+ * v2.0.0
  */
 (function($) {
 	$.fn.sticky = function() {
