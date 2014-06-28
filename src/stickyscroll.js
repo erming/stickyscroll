@@ -4,87 +4,43 @@
  * v1.3.1
  */
 (function($) {
-	$.fn.sticky = function(options) {
-		var settings = $.extend({
-			disableManualScroll: false,
-			overflow: 'auto',
-			scrollToBottom: true,
-			speed: 0
-		}, options);
-		
+	$.fn.sticky = function() {
 		var self = this;
 		if (self.size() > 1) {
 			return self.each(function() {
 				$(this).sticky(options);
 			});
 		}
-		
-		self.css('overflow-y', settings.overflow);
-		self.css('-webkit-overflow-scrolling', 'touch');
-		if (settings.scrollToBottom) {
-			self.scrollToBottom();
+
+		self.data("sticky", true);
+		if (self.css("overflow-y") == "visible") {
+			self.css("overflow-y", "auto");
 		}
-		
-		var resizeTimer;
-		var resizing = false;
-		$(window).on('resize', function() {
-			self.finish();
-			
-			// This will prevent the scroll event from triggering
-			// while resizing the browser.
-			resizing = true;
-			
-			clearTimeout(resizeTimer);
-			resizeTimer = setTimeout(function() {
-				resizing = false;
-			}, 100);
-			
-			if (sticky) {
-				self.scrollToBottom();
-			}
-		});
-		
-		var scrollTimer;
-		var sticky = true;
-		self.on('scroll', function() {
-			if (settings.disableManualScroll) {
-				self.scrollToBottom();
-			} else if (!resizing) {
-				clearTimeout(scrollTimer);
-				scrollTimer = setTimeout(function() {
-					sticky = self.isScrollAtBottom();
-				}, 50);
-			}
-		});
-		self.trigger('scroll');
-		self.on('prepend append', function() {
-			if (sticky) {
-				self.scrollToBottom(settings.speed);
-			}
-		});
-		
-		return this;
 	};
-	
-	// Normally, these functions won't trigger any events.
-	// Lets override them.
-	var events = ['prepend', 'append'];
-	$.each(events, function(i, e) {
-		var fn = $.fn[e];
-		$.fn[e] = function() {
-			return fn.apply(this, arguments).trigger(e);
-		};
-	});
-	
-	$.fn.isScrollAtBottom = function() {
+
+	$.fn.scrollBottom = function() {
+		return this.each(function() {
+			$(this).animate({scrollTop: this.scrollHeight}, 0);
+		});
+	};
+
+	function isScrollBottom() {
 		if ((this.scrollTop() + this.outerHeight() + 1) >= this.prop('scrollHeight')) {
 			return true;
 		}
 	};
-	
-	$.fn.scrollToBottom = function(speed) {
-		return this.each(function() {
-			$(this).finish().animate({scrollTop: this.scrollHeight}, speed || 0);
-		});
+
+	var append = $.fn.append;
+	$.fn.append = function() {
+		var scroll = false;
+		var sticky = this.data("sticky");
+		if (sticky && isScrollBottom.call(this)) {
+			scroll = true;
+		}
+		append.apply(this, arguments);
+		if (scroll) {
+			this.scrollBottom();
+		}
+		return this;
 	};
 })(jQuery);

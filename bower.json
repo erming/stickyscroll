@@ -1,11 +1,10 @@
 {
   "name": "stickyscroll",
+  "description": "Make your scrollbars stick when scrolled to the bottom",
   "homepage": "https://github.com/erming/stickyscroll",
   "authors": [
     "Mattias Erming <mattias@mattiaserming.com>"
   ],
-  "description": "Make your scrollbars stick when scrolled to the bottom",
-  "main": "./src/stickyscroll.js",
   "keywords": [
     "scroll",
     "scrollbar",

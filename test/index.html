@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+	
+	<title>StickyScroll</title>
+
+	<style>
+	body {
+		font: 14px monospace;
+		line-height: 1em;
+		margin: 10% 0;
+	}
+	.container {
+		margin: 0 auto;
+		width: 200px;
+	}
+	#test {
+		border: 1px solid #eee;
+		height: 10em;
+		margin-top: 5px;
+		padding: 5px 7px;
+	}
+	</style>
+
+	</head>
+	<body>
+	
+	<div class="container">
+		<div id="test"></div>
+	</div>
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="../src/stickyscroll.js"></script>
+	<script>
+	$(function() {
+		$("#test").sticky();
+		var i = 0;
+		setInterval(function() {
+			var div = $("<div>").html("Row #" + i++);
+			$("#test").append(div);
+		}, 100);
+	});
+	</script>
+
+	</body>
+</html>
