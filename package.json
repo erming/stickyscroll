@@ -2,7 +2,7 @@
   "name": "stickyscroll",
   "description": "Make your scrollbars stick when scrolled to the bottom",
   "author": "Mattias Erming",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/erming/stickyscroll"
