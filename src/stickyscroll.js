@@ -1,7 +1,7 @@
 /*!
  * stickyscroll
  * https://github.com/erming/stickyscroll
- * v2.1.1
+ * v2.2.0
  */
 (function($) {
 	$.fn.sticky = function() {
@@ -47,6 +47,8 @@
 			$(this).animate({scrollTop: this.scrollHeight}, 0);
 		});
 	};
+
+	$.fn.isScrollBottom = isScrollBottom;
 
 	function isScrollBottom() {
 		if ((this.scrollTop() + this.outerHeight() + 1) >= this.prop("scrollHeight")) {

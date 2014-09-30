@@ -2,7 +2,7 @@
   "name": "stickyscroll",
   "description": "Stay scrolled to the bottom",
   "author": "Mattias Erming",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "repository": {
     "type": "git",
     "url": "http://github.com/erming/stickyscroll"
